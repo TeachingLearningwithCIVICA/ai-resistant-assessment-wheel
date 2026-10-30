@@ -1,0 +1,905 @@
+<!DOCTYPE html>
+<!--
+  CIVICA learning object — AI-Resistant Assessment Wheel (v3.0)
+  Author: Dr Mina Sotiriou, European University Institute (Florence School of Transnational Governance)
+  Adapted to the CIVICA frame. Text unchanged. English only, at the author's request;
+  every readable string, including all wheel content, lives in LANGS.en.
+-->
+<html lang="en" data-theme="light"
+      data-lo-id="civica-tl-ai-resistant-assessment-wheel"
+      data-lo-author="Mina Sotiriou"
+      data-lo-institution="European University Institute"
+      data-lo-published="2026-09-10"
+      data-lo-languages="en"
+      data-lo-type="interactive-framework"
+      data-lo-licence="CC-BY-NC-SA-4.0"
+      data-lo-audience="teacher"
+      data-lo-topics="assessment-design,generative-ai,blooms-taxonomy,authentic-assessment">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script>/* Apply the system theme before first paint, so dark-mode readers see no light flash. */
+if (typeof window.matchMedia === "function" && window.matchMedia("(prefers-color-scheme: dark)").matches) document.documentElement.dataset.theme = "dark";</script>
+<title>AI-Resistant Assessment Wheel | Teaching &amp; Learning with CIVICA</title>
+<!-- ===== CIVICA learning object metadata: data-lo-*, <meta>, JSON-LD — keep in sync ===== -->
+<meta name="description" content="Click an assessment type to explore it, then select the learning outcome verb to see strengths, considerations and why AI cannot do this alone"/>
+<meta name="author" content="Mina Sotiriou"/>
+<meta name="theme-color" content="#244f9d"/>
+<meta property="og:type" content="article"/>
+<meta property="og:title" content="AI-Resistant Assessment Wheel"/>
+<meta property="og:description" content="Click an assessment type to explore it, then select the learning outcome verb to see strengths, considerations and why AI cannot do this alone"/>
+<meta property="og:site_name" content="Teaching and Learning with CIVICA"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LearningResource",
+  "name": "AI-Resistant Assessment Wheel",
+  "description": "Click an assessment type to explore it, then select the learning outcome verb to see strengths, considerations and why AI cannot do this alone",
+  "learningResourceType": "interactive-framework",
+  "audience": {
+    "@type": "EducationalAudience",
+    "educationalRole": "teacher"
+  },
+  "teaches": "Choosing assessment formats that AI cannot complete on a student's behalf, by Bloom's level",
+  "inLanguage": [
+    "en"
+  ],
+  "datePublished": "2026-09-10",
+  "isAccessibleForFree": true,
+  "license": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+  "version": "3.0",
+  "author": {
+    "@type": "Person",
+    "name": "Mina Sotiriou",
+    "honorificPrefix": "Dr",
+    "affiliation": {
+      "@type": "CollegeOrUniversity",
+      "name": "European University Institute"
+    }
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "CIVICA – The European University of Social Sciences",
+    "url": "https://www.civica.eu/"
+  },
+  "isPartOf": {
+    "@type": "Collection",
+    "name": "Teaching and Learning with CIVICA"
+  },
+  "about": [
+    "Assessment design",
+    "Generative AI in assessment",
+    "Bloom's taxonomy",
+    "Authentic assessment"
+  ],
+  "keywords": "AI-resistant assessment, assessment design, Bloom's taxonomy, case study, policy brief, op-ed, peer review, learning journal"
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,400;0,6..12,600;0,6..12,700;0,6..12,900;1,6..12,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --font-display:"Nunito Sans","Segoe UI",system-ui,sans-serif;
+  --civica-mark:#244f9d; --civica-rule:rgba(36,79,157,.22); --on-mark:#FFFFFF;
+  /* The author's page palette; one grey (#66655f) replaces #bbb/#aaa/#999/#777, which failed AA */
+  --bg:#f8f7f4; --surface:#ffffff; --ink:#1a1a1a; --ink-2:#222222; --muted:#66655f; --soft:#555555;
+  --line:#dddddd; --line-2:#eeeeee; --chip-bg:#f0ede8; --chip-hover:#e8e4dc; --accent:#534AB7; --hub-text:#3C3489;
+  --focus:#3C3489; --wheel-gap:#ffffff;
+}
+[data-theme="dark"]{
+  color-scheme:dark;
+  --civica-mark:#86acda; --civica-rule:rgba(134,172,218,.26); --on-mark:#141413;
+  --bg:#141413; --surface:#1f1f1d; --ink:#ecebe7; --ink-2:#dedcd6; --muted:#aeaca5; --soft:#c2c0ba;
+  --line:#3a3936; --line-2:#2c2b29; --chip-bg:#2a2927; --chip-hover:#34332f; --accent:#a9a3f0;
+  --focus:#c9c4ff; --wheel-gap:#141413;
+}
+*,*::before,*::after{ box-sizing:border-box; margin:0; padding:0; }
+[hidden]{ display:none !important; }
+html{ -webkit-text-size-adjust:100%; }
+@media (prefers-reduced-motion:reduce){ *{ transition:none !important; } }
+body{ font-family:var(--font-display); background:var(--bg); color:var(--ink); min-height:100vh; font-size:17px; line-height:1.55; -webkit-font-smoothing:antialiased; }
+a{ color:var(--accent); text-underline-offset:3px; }
+:focus-visible{ outline:3px solid var(--focus); outline-offset:2px; border-radius:4px; }
+.sr-only{ position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap; border:0; }
+
+/* ---------- CIVICA chrome ---------- */
+.skip-link{ position:absolute; left:12px; top:-4rem; z-index:100; background:var(--civica-mark); color:var(--on-mark); font-weight:700; font-size:15px; padding:11px 18px; border-radius:10px; text-decoration:none; transition:top .2s ease; }
+.skip-link:focus{ top:12px; }
+.civica-bar{ border-bottom:1px solid var(--line); }
+.civica-bar > div{ max-width:900px; margin:0 auto; padding:14px 1.5rem; display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap; }
+.civica-mark{ display:flex; flex-direction:column; gap:2px; text-decoration:none; line-height:1; }
+/* PLACEHOLDER WORDMARK — the CIVICA logo is set in Movement (licensed, NM Type)
+   and cannot be embedded. Swap for the official transparent SVG when available. */
+.civica-wordmark{ font-weight:900; font-size:18px; letter-spacing:.06em; color:var(--civica-mark); }
+.civica-sub{ font-weight:600; font-size:12px; letter-spacing:.12em; text-transform:uppercase; color:var(--muted); }
+.ctl{ font-family:var(--font-display); font-size:14px; font-weight:700; letter-spacing:.03em; background:transparent; color:var(--ink); border:1.5px solid var(--line); border-radius:999px; padding:9px 15px; cursor:pointer; line-height:1; min-height:36px; }
+.ctl:hover{ border-color:var(--civica-mark); color:var(--civica-mark); }
+.ctl-theme{ display:flex; align-items:center; gap:7px; padding-left:12px; }
+.ctl-theme svg{ width:15px; height:15px; flex-shrink:0; }
+
+/* ---------- the author's layout ---------- */
+.page{ max-width:900px; margin:0 auto; padding:2rem 1.5rem; }
+.hdr{ text-align:center; margin-bottom:1.2rem; }
+h1{ font-size:28px; font-weight:900; color:var(--ink); margin-bottom:6px; line-height:1.2; }
+.hdr p{ font-size:16px; color:var(--muted); max-width:640px; margin:0 auto; }
+#wheel-wrap{ display:flex; justify-content:center; margin-bottom:.5rem; }
+#wsvg{ width:100%; max-width:640px; overflow:visible; font-family:var(--font-display); }
+.wseg, .bloom-seg{ transition:opacity .15s; cursor:pointer; }
+.wseg:hover{ opacity:.8; }
+.wseg.dimmed{ opacity:.12; }
+.wseg.active{ opacity:1; }
+.bloom-seg:hover{ opacity:.8; }
+/* keyboard / screen-reader / phone route to the same eight types */
+.chips{ display:flex; flex-wrap:wrap; justify-content:center; gap:8px; margin:.4rem auto 1rem; max-width:760px; }
+.chip{ display:inline-flex; align-items:center; gap:8px; font-family:var(--font-display); font-size:15px; font-weight:700; color:var(--ink);
+  background:var(--surface); border:1.5px solid var(--line); border-radius:999px; padding:7px 14px; cursor:pointer; min-height:40px; }
+.chip:hover{ border-color:var(--ink); }
+.chip .dot{ width:12px; height:12px; border-radius:50%; flex-shrink:0; }
+.chip[aria-pressed="true"]{ border-color:var(--ink); box-shadow:inset 0 0 0 1px var(--ink); background:var(--chip-bg); }
+#reset-btn{ display:block; margin:.5rem auto .6rem; padding:.45rem 1.1rem; font-size:15px; font-weight:700; font-family:inherit; background:var(--chip-bg); border:1px solid var(--line); border-radius:20px; cursor:pointer; color:var(--muted); }
+#reset-btn:hover{ background:var(--chip-hover); color:var(--ink); }
+#hint{ text-align:center; font-size:16px; color:var(--muted); margin-bottom:.5rem; }
+#verb-legend{ display:flex; justify-content:center; gap:20px; flex-wrap:wrap; margin:.5rem 0 1.2rem; }
+.vl-item{ display:flex; align-items:flex-start; gap:8px; max-width:240px; }
+.vl-dot{ width:13px; height:13px; border-radius:50%; flex-shrink:0; margin-top:4px; }
+.vl-text strong{ display:block; font-size:15px; font-weight:900; margin-bottom:3px; color:var(--vl-label); }
+[data-theme="dark"] .vl-text strong{ color:var(--vl-fill); }
+.vl-text span{ font-size:14px; color:var(--soft); line-height:1.5; }
+#panel{ border:1px solid var(--line); border-radius:12px; background:var(--surface); overflow:hidden; margin-bottom:1.2rem; border-top:5px solid var(--seg); scroll-margin:1rem; }
+#ph{ padding:1rem 1.2rem .8rem; border-bottom:1px solid var(--line-2); display:flex; align-items:flex-start; justify-content:space-between; gap:1rem; flex-wrap:wrap; }
+#ph-left{ flex:1 1 18rem; }
+#pn{ font-size:21px; font-weight:900; margin-bottom:3px; color:var(--seg-title); }
+[data-theme="dark"] #pn{ color:var(--ink); }
+#pd{ font-size:15px; color:var(--muted); }
+#bloom-tabs{ display:flex; gap:6px; flex-shrink:0; flex-wrap:wrap; }
+.bloom-pill{ padding:.4rem .9rem; font-size:14px; font-weight:700; font-family:inherit; border-radius:20px; cursor:pointer; border:2px solid var(--line); background:transparent; color:var(--muted); transition:all .15s; min-height:36px; }
+.bloom-pill[aria-pressed="true"]{ background:var(--pill-fill); color:var(--pill-text); border-color:var(--pill-fill); }
+#pb{ display:grid; grid-template-columns:1fr 1fr 1fr; }
+@media (max-width:640px){ #pb{ grid-template-columns:1fr; } .pc{ border-right:none !important; border-bottom:1px solid var(--line-2); } }
+.pc{ padding:.95rem 1.1rem; border-right:1px solid var(--line-2); }
+.pc:last-child{ border-right:none; }
+.pl{ font-size:12.5px; font-weight:900; text-transform:uppercase; letter-spacing:.08em; color:var(--muted); margin-bottom:8px; }
+.pc ul{ list-style:none; }
+.pc li{ font-size:15px; color:var(--ink-2); line-height:1.6; margin-bottom:8px; padding-left:13px; position:relative; }
+.pc li::before{ content:"•"; position:absolute; left:0; color:var(--muted); }
+#pai{ font-size:15px; line-height:1.6; color:var(--ink-2); }
+#cons-box{ border:1px solid var(--line); border-radius:12px; background:var(--bg); padding:1.1rem 1.2rem; margin-bottom:1.4rem; }
+#ct{ font-size:13px; font-weight:900; text-transform:uppercase; letter-spacing:.09em; color:var(--muted); margin-bottom:10px; }
+#cg{ display:grid; grid-template-columns:repeat(auto-fit,minmax(min(170px,100%),1fr)); gap:8px; list-style:none; }
+.ci{ background:var(--surface); border:1px solid var(--line); border-radius:8px; padding:.7rem .85rem; }
+.ci b{ font-size:15px; font-weight:700; display:block; margin-bottom:4px; color:var(--ink); }
+.ci span{ font-size:14px; color:var(--soft); line-height:1.5; }
+.refs-block{ margin:1rem 0 1.2rem; }
+.refs-block h2{ font-size:13px; font-weight:900; text-transform:uppercase; letter-spacing:.06em; color:var(--muted); margin-bottom:6px; }
+.refs-block p{ font-size:14px; color:var(--soft); line-height:1.7; margin-bottom:3px; }
+.refs-block strong{ color:var(--accent); }
+.footer{ margin-top:2.5rem; padding-top:24px; border-top:1px solid var(--line); }
+.citation{ font-size:14px; font-style:italic; color:var(--soft); margin:0 0 4px; line-height:1.6; max-width:72ch; }
+/* ---------- CIVICA attribution ---------- */
+.attribution{ margin-top:1.4rem; padding-top:1.2rem; border-top:1.5px solid var(--civica-rule); display:grid; gap:.45rem; font-size:14px; color:var(--ink); }
+.attr-value{ flex:1 1 18rem; min-width:0; }
+.attr-line{ display:flex; flex-wrap:wrap; align-items:baseline; gap:.2rem .55rem; margin:0; }
+.attr-label{ font-weight:900; font-size:12px; letter-spacing:.14em; text-transform:uppercase; color:var(--civica-mark); flex:0 0 7.5rem; }
+.attribution a{ color:var(--ink); text-decoration-color:var(--civica-rule); }
+.attr-role{ color:var(--muted); font-size:13px; }
+.attr-funding{ margin:.5rem 0 0; font-size:13px; color:var(--muted); }
+@media (max-width:600px){ .attr-label{ flex:1 0 100%; } .civica-sub{ display:none; } .page{ padding:1.5rem 1rem; } }
+@media print{ .civica-bar, .skip-link, #reset-btn, #hint, .chips{ display:none !important; } body{ background:#fff; color:#000; } .ci{ break-inside:avoid; } }
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main" id="t-skip"></a>
+<div class="civica-bar">
+  <div>
+    <!-- PLACEHOLDER: swap for the official transparent CIVICA SVG if available. -->
+    <a class="civica-mark" href="https://www.civica.eu/" target="_blank" rel="noopener noreferrer" id="t-mark">
+      <span class="civica-wordmark" aria-hidden="true">CIVICA</span>
+      <span class="civica-sub" id="t-mark-sub" aria-hidden="true"></span>
+    </a>
+    <button type="button" class="ctl ctl-theme" id="theme-btn" aria-pressed="false">
+      <span id="theme-icon" aria-hidden="true"></span><span id="theme-label"></span>
+    </button>
+  </div>
+</div>
+
+<main class="page" id="main">
+<div class="hdr">
+  <h1 id="t-title"></h1>
+  <p id="t-intro"></p>
+</div>
+
+<!-- The wheel is the pointer/touch view. The chip buttons below it are the
+     keyboard, screen-reader and small-screen route to the same eight types. -->
+<div id="wheel-wrap">
+  <svg id="wsvg" viewBox="-320 -320 640 640" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"></svg>
+</div>
+<div class="chips" id="chips" role="group"></div>
+
+<p id="hint"></p>
+<button type="button" id="reset-btn" hidden></button>
+<div id="verb-legend"></div>
+
+<section id="panel" hidden aria-labelledby="pn">
+  <div id="ph">
+    <div id="ph-left">
+      <h2 id="pn"></h2>
+      <p id="pd"></p>
+    </div>
+    <div id="bloom-tabs" role="group" aria-labelledby="pn"></div>
+  </div>
+  <div id="pb">
+    <div class="pc"><h3 class="pl" id="t-col-pros"></h3><ul id="pros"></ul></div>
+    <div class="pc"><h3 class="pl" id="t-col-cons"></h3><ul id="cons2"></ul></div>
+    <div class="pc"><h3 class="pl" id="t-col-ai"></h3><p id="pai"></p></div>
+  </div>
+</section>
+
+<section id="cons-box" aria-labelledby="ct">
+  <h2 id="ct"></h2>
+  <ul id="cg"></ul>
+</section>
+
+<section class="refs-block" id="references" aria-labelledby="t-refs">
+  <h2 id="t-refs"></h2>
+  <p id="t-ref1"></p>
+  <p id="t-ref2"></p>
+</section>
+
+<footer class="footer">
+  <p class="citation" id="t-cite"></p>
+  <!-- ===== CIVICA attribution — mirrors the JSON-LD in <head> ===== -->
+  <div class="attribution">
+    <p class="attr-line"><span class="attr-label" id="t-lbl-author"></span>
+      <span class="attr-value">Dr Mina Sotiriou <span class="attr-role">European University Institute, Florence School of Transnational Governance</span></span></p>
+    <p class="attr-line"><span class="attr-label" id="t-lbl-published"></span><time id="published-date"></time></p>
+    <p class="attr-line"><span class="attr-label" id="t-lbl-part"></span>
+      <a href="https://www.civica.eu/" target="_blank" rel="noopener noreferrer">Teaching and Learning with CIVICA</a></p>
+    <p class="attr-line"><span class="attr-label" id="t-lbl-licence"></span><span id="t-licence" class="attr-value"></span></p>
+    <p class="attr-funding" id="t-funding"></p>
+  </div>
+</footer>
+</main>
+<p class="sr-only" aria-live="polite" id="live"></p>
+<script>
+(function(){
+const PUBLISHED = "2026-09-10";
+const LICENCE_URL = "https://creativecommons.org/licenses/by-nc-sa/4.0/";
+const LICENCE_NAME = "Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)";
+/* ===== Language pack — English only, at the author's request (her text, verbatim). ===== */
+const LANGS = window.LANGS = {}; LANGS.en = {
+ "docTitle": "AI-Resistant Assessment Wheel | Teaching & Learning with CIVICA",
+ "title": "AI-Resistant Assessment Wheel",
+ "intro": "Click an assessment type to explore it, then select the learning outcome verb to see strengths, considerations and why AI cannot do this alone",
+ "hint": "Click any assessment type to begin",
+ "reset": "↻ Reset wheel",
+ "colPros": "Strengths",
+ "colCons": "Considerations",
+ "colAi": "Why AI cannot do this alone",
+ "considerTitle": "What to consider when designing any AI-resistant assessment",
+ "consider": [
+  [
+   "Max 3 per course",
+   "One formative and two summative. Fewer, weightier tasks promote deeper engagement. Where appropriate, the two summative assessments can be linked, evaluating different criteria or different stages of the same process."
+  ],
+  [
+   "Course-anchored prompts",
+   "Use cases or data introduced late in the course. AI has no access to what happens in your class."
+  ],
+  [
+   "Assessment criteria",
+   "Explicitly reward critical reasoning and visible judgement rather than presentation, length or fluency."
+  ],
+  [
+   "Process-based assessment",
+   "Break large projects into smaller components such as a proposal, annotated bibliography, outline, rough draft, final submission and viva. Grade the process, not just the output."
+  ],
+  [
+   "Reflect critically on your current assessments",
+   "Consider whether your current design really measures what you want it to measure, and how else you might ascertain students' learning."
+  ]
+ ],
+ "refsTitle": "References",
+ "ref1": [
+  "[1]",
+  "Wheel structure adapted from the ABC Learning Design method, UCL (Young & Perović) — ",
+  "abc-ld.org",
+  "https://abc-ld.org/",
+  "."
+ ],
+ "ref2": [
+  "[2]",
+  "Bloom's Taxonomy action verbs — ",
+  "TeachThought",
+  "https://www.teachthought.com/critical-thinking-posts/blooms-taxonomy-verbs-for-critical-thinking-for-critical-thinking/",
+  "."
+ ],
+ "citation": "Suggested citation: Sotiriou, M. (2026). AI-Resistant Assessment Wheel. EUI Florence School of Transnational Governance. Teaching & Learning with CIVICA.",
+ "developed": "Developed by Dr Mina Sotiriou, EUI – Florence School of Transnational Governance, using Claude (Anthropic), 2026 · v3.0 · See References [1][2] above for the wheel's structural and taxonomic sources.",
+ "hubLines": [
+  "AI-resistant",
+  "assessment",
+  "wheel"
+ ],
+ "rings": [
+  {
+   "id": "analyse",
+   "label": "Analyse",
+   "verbs": [
+    "contrast",
+    "differentiate",
+    "categorise",
+    "deduce",
+    "distill",
+    "correlate",
+    "subdivide",
+    "calculate",
+    "connect",
+    "problem-solve"
+   ]
+  },
+  {
+   "id": "evaluate",
+   "label": "Evaluate",
+   "verbs": [
+    "critique",
+    "judge",
+    "defend",
+    "appraise",
+    "prioritise",
+    "reframe",
+    "argue",
+    "revise",
+    "refine",
+    "decide"
+   ]
+  },
+  {
+   "id": "create",
+   "label": "Create",
+   "verbs": [
+    "design",
+    "formulate",
+    "develop",
+    "invent",
+    "compose",
+    "produce",
+    "modify",
+    "role-play",
+    "imagine",
+    "collaborate"
+   ]
+  }
+ ],
+ "segs": [
+  {
+   "id": "casestudy",
+   "label": "Case\nstudy",
+   "desc": "Structured analysis of a real or constructed scenario using course frameworks",
+   "content": {
+    "analyse": {
+     "pros": [
+      "Case studies help students move beyond surface description by requiring them to break down a complex situation into its component parts and examine the relationships between them.",
+      "This develops disciplinary thinking and the ability to apply theoretical frameworks to real situations, which is a core skill at postgraduate level."
+     ],
+     "cons": [
+      "Incorporate multi-stage processes such as an initial analysis, iterative feedback-based recommendations and a final implementation plan, for example through an oral defence or a poster, to assess process over product rather than focusing solely on the final written output."
+     ],
+     "ai": "Analysing a case introduced in class requires connecting specific details to the theoretical frameworks and debates discussed in the course. AI has no access to that situated knowledge and cannot replicate the student's reasoning process."
+    },
+    "evaluate": {
+     "pros": [
+      "Case evaluation requires students to make and justify judgements about the significance, quality or implications of a situation.",
+      "This develops professional judgement that is transferable beyond the course. Students learn not just what happened but why it matters and by whose criteria, which is a skill central to postgraduate level thinking."
+     ],
+     "cons": [
+      "Students often default to description or summary without explicit guidance on what evaluation means.",
+      "The brief must specify the criteria students are expected to apply, and marking must reward the quality of justification rather than the conclusion reached alone."
+     ],
+     "ai": "A well-structured evaluative judgement requires students to apply criteria they have developed through course discussions. The position must be defended with reasoning that connects to their own developing framework. AI can produce plausible-sounding positions but cannot ground them in a student's personal intellectual development."
+    },
+    "create": {
+     "pros": [
+      "At the create level students synthesise case evidence to produce an original argument, recommendation or framework that did not exist before.",
+      "This is the highest level of cognitive challenge and is strongly associated with deep learning. It is particularly effective when students must produce a tangible output such as a policy recommendation or a new analytical model."
+     ],
+     "cons": [
+      "The task brief must make clear that originality is expected and what that means in an academic context.",
+      "Students need sufficient exposure to the case material before they can synthesise meaningfully. Marking must reward the coherence and originality of what is created, not just the coverage of the material."
+     ],
+     "ai": "Generating an original synthesis from a specific course-introduced case requires the student to integrate their own developing perspective with the material. AI can produce generic syntheses but cannot produce one grounded in the student's unique intellectual position and course experience."
+    }
+   }
+  },
+  {
+   "id": "scenario",
+   "label": "Scenario &\nsimulation",
+   "desc": "Students respond to a constructed or live situation requiring applied and creative reasoning",
+   "content": {
+    "analyse": {
+     "pros": [
+      "Placing analytical skills in an applied context requires students to identify what is happening, why and what factors are at play.",
+      "Scenario-based tasks are particularly effective for linking abstract concepts to concrete situations and work well as formative tasks that prepare students for more complex summative work."
+     ],
+     "cons": [
+      "The scenario must be course-specific and introduced recently enough that AI has no coverage of it. Generic scenarios drawn from well-known events are easily handled by AI.",
+      "The brief must ask students to apply specific frameworks from the course rather than simply describe the situation."
+     ],
+     "ai": "A scenario drawn directly from a class session, a guest speaker or a recent event introduced by faculty is outside AI training data. Applying the specific analytical tools from the course requires genuine engagement that cannot be fabricated."
+    },
+    "evaluate": {
+     "pros": [
+      "Scenario evaluation requires students to judge the significance of elements within a situation and defend their assessment.",
+      "This develops the kind of situated professional judgement that is central to expert practice. It is most effective when students must decide what matters most in a complex situation and justify that decision with evidence."
+     ],
+     "cons": [
+      "Students need a clear framework for what they are evaluating and why. Without this, evaluative tasks often collapse back into description.",
+      "Moderation across markers requires prior agreement on what constitutes a well-justified evaluation."
+     ],
+     "ai": "Evaluating a scenario requires the student to apply criteria that emerge from course-specific discussion. The justification must reflect their own developing judgement rather than a generic assessment of the situation that any informed reader could produce."
+    },
+    "create": {
+     "pros": [
+      "Live simulation and role-play require students to generate responses in real time, drawing on course knowledge to construct a position or solution that did not exist before.",
+      "The task is inherently authentic and cannot be fully prepared in advance, which makes it one of the most effective formats for developing integrative and creative thinking."
+     ],
+     "cons": [
+      "This format is logistically demanding and requires careful facilitation and a clear brief so students understand the purpose.",
+      "Anxiety management is important as some students find live performance tasks distressing. Individual reflection components are essential for assessment accountability."
+     ],
+     "ai": "Live simulation unfolds in real time in a specific facilitated context. AI cannot participate, cannot respond to the faculty member's interventions and cannot produce the individual reflection on decisions made during the session. The process itself is the evidence of learning."
+    }
+   }
+  },
+  {
+   "id": "oped",
+   "label": "Op-ed",
+   "desc": "A structured opinion piece written for a defined audience and purpose, submitted with an annotated drafting portfolio that documents the student's editorial decisions",
+   "content": {
+    "analyse": {
+     "pros": [
+      "Writing an analytical opinion piece requires students to break down a complex issue and communicate it clearly to a defined audience.",
+      "This develops the ability to translate specialised knowledge into accessible argument, which is a distinct and valuable skill at postgraduate level. Defining a specific audience for the piece provides a real communicative constraint that sharpens analytical thinking."
+     ],
+     "cons": [
+      "The analytical opinion piece must be distinguished clearly from the evaluative one in the brief. Students need guidance on what analysis means in a public writing context where conventions differ from academic writing.",
+      "The annotated draft portfolio is essential to make the analytical process visible and assessable."
+     ],
+     "ai": "The analysis must be anchored in course-specific material and the student's own developing perspective. The annotated portfolio requires the student to explain why they structured the analysis as they did, which is a metacognitive act that AI cannot perform retrospectively on the student's behalf."
+    },
+    "evaluate": {
+     "pros": [
+      "Requires students to take and defend a position on a contested issue in writing, developing critical voice and the ability to construct a justified argument for a specific audience.",
+      "Defining the intended reader forces students to consider register, tone and the communicative stakes of their judgement. The drafting portfolio makes the evaluative process visible and assessable."
+     ],
+     "cons": [
+      "The op-ed alone is highly vulnerable to AI generation. The portfolio component is mandatory.",
+      "Students need a model of what an annotated draft looks like. Assessment criteria must reward the quality of the argument and the evidence used rather than the quality of the writing alone."
+     ],
+     "ai": "The portfolio must reference specific feedback received during the course. Annotating why an argument changed between drafts requires genuine prior engagement that cannot be reconstructed after the fact."
+    },
+    "create": {
+     "pros": [
+      "At the create level the op-ed asks students to produce something genuinely their own. Depending on how the brief is designed, this might mean tying the question directly to their lived experiences and connecting it to class discussions and readings, arguing against a position with reasoning that is uniquely theirs, or addressing complex opposing viewpoints in a way that only someone with their particular perspective could do. Both approaches are valid and faculty can choose which best serves the learning outcomes.",
+      "What matters most at this level is the student's own voice. That voice is what carries the work beyond the course and into the student's life after graduation, where the ability to argue clearly and personally for what one believes is a genuinely transferable capability. Assessment criteria should focus on the creation process itself, for example the steps the student took to develop the argument, the decisions they made about framing and audience, and the revisions they made in response to feedback."
+     ],
+     "cons": [
+      "The brief needs to give students enough freedom to draw on their own perspective while remaining anchored in course content.",
+      "Assessment criteria must be explicit about what process-focused assessment looks like so students understand that the journey to the final piece is itself the object of assessment."
+     ],
+     "ai": "An op-ed rooted in the student's own lived experience, personal reasoning and documented process of development cannot be produced by AI. The voice is the student's. The process is the student's. The decisions about what to argue and why emerge from who that student is and what they have encountered in the course."
+    }
+   }
+  },
+  {
+   "id": "policybrief",
+   "label": "Policy\nbrief",
+   "desc": "Structured recommendation document for a defined real-world audience and decision",
+   "content": {
+    "analyse": {
+     "pros": [
+      "Drafting a policy brief at the analytical level requires students to identify the key components of a policy problem including its causes, stakeholders, evidence base and context.",
+      "This develops real-world policy literacy and the kind of structured problem decomposition that is central to professional practice in governance and public policy."
+     ],
+     "cons": [
+      "Students need guidance on what policy analysis means and how it differs from policy advocacy. The brief must specify the problem and context clearly enough that students are analysing something specific rather than producing a generic overview.",
+      "AI can produce fluent policy summaries, so the brief must require genuine analytical engagement with course-specific material."
+     ],
+     "ai": "Analysis of a policy problem introduced in class requires connecting to specific readings, debates and frameworks discussed in the course. AI cannot replicate that situated analytical work."
+    },
+    "evaluate": {
+     "pros": [
+      "Requires students to assess the feasibility, effectiveness or ethical implications of policy options and defend their judgement.",
+      "The brief format forces concision and prioritisation of argument, which are themselves evaluative skills directly relevant to professional practice in policy and governance contexts."
+     ],
+     "cons": [
+      "AI can produce generic policy briefs fluently. The topic must be course-specific and current enough to sit outside AI training coverage.",
+      "Marking criteria must explicitly reward the quality of justification and the use of evidence rather than presentation quality."
+     ],
+     "ai": "The brief must respond to a specific policy context introduced in the course. Generic AI output on a real policy issue lacks the situated analytical grounding that the course-specific brief requires."
+    },
+    "create": {
+     "pros": [
+      "Adding a live presentation to the policy brief requires students to defend their recommendations in real time under questioning.",
+      "This is one of the most effective tools for making student understanding visible. It develops both written and oral professional communication skills simultaneously, and audience awareness sharpens the quality of the written brief itself."
+     ],
+     "cons": [
+      "Presentation logistics require scheduling. Students need a clear rubric and preparation guidance.",
+      "Consistency of moderation across presenters requires calibration between markers."
+     ],
+     "ai": "Defending recommendations in real time under unpredictable questions tests genuine understanding. AI cannot attend or answer on the student's behalf. Any incoherence between the written brief and the oral defence is immediately visible to the assessor."
+    }
+   }
+  },
+  {
+   "id": "essay",
+   "label": "Essay",
+   "desc": "Extended written argument drawing on theory, evidence and original reasoning",
+   "content": {
+    "analyse": {
+     "pros": [
+      "An analytical essay requires students to identify and examine the relationships between concepts, arguments and evidence.",
+      "When anchored in course-specific material it develops genuinely personal intellectual work and the disciplinary thinking that is central to postgraduate education."
+     ],
+     "cons": [
+      "The essay prompt must be specific enough to prevent generic AI responses. Late-released prompts tied to course material introduced in the final weeks significantly reduce AI utility.",
+      "Assessment criteria must reward analytical depth and the quality of reasoning rather than the quality of the writing or length. Essays pose less intrinsic difficulty than timed exams for dyslexic students, but can still disadvantage them if criteria reward writing structure and presentation over argument and analysis. Sharing examples of strong essays at different levels of achievement, with some commentary on what is valued, helps all students understand what is expected."
+     ],
+     "ai": "An analytical essay prompt tied to specific course readings, debates and cases discussed in class cannot be adequately addressed by AI without that course context. The student's analytical framework develops through the course and is uniquely theirs."
+    },
+    "evaluate": {
+     "pros": [
+      "The critical position paper requires students to construct and defend an original evaluative argument.",
+      "This develops the evaluative expertise that students will need in professional life. The AI use log makes the intellectual process visible and assessable, which turns AI engagement itself into evidence of learning."
+     ],
+     "cons": [
+      "Polished writing can mask shallow thinking if assessment criteria focus on presentation rather than argument. The AI use log requires clear guidance and a model example.",
+      "The prompt must be genuinely course-specific to prevent generic AI responses. Essays pose less intrinsic difficulty than timed exams for dyslexic students, but the design still matters: criteria should prioritise argument and analysis, and sharing examples at different achievement levels supports all students."
+     ],
+     "ai": "The log requires students to document what AI produced and explain why they diverged from it. Justifying intellectual decisions is inherently personal. A course-specific late-released prompt has no AI training coverage."
+    },
+    "create": {
+     "pros": [
+      "The research essay with a faculty dialogue requires students to synthesise cross-disciplinary perspectives into an original argument and then defend specific choices in a post-submission conversation.",
+      "The dialogue scaffolds and reveals understanding simultaneously. Self-chosen data makes each essay genuinely unique and difficult to replicate."
+     ],
+     "cons": [
+      "The faculty dialogue adds scheduling time after submission. Self-sourced data requires guidance on acceptable sources.",
+      "Assessment criteria must explicitly weight reasoning and synthesis over the quality of the writing."
+     ],
+     "ai": "The dialogue requires the student to explain specific choices in real time. Any incoherence between the written argument and the oral explanation is immediately visible. Recent self-sourced data is outside AI training coverage."
+    }
+   }
+  },
+  {
+   "id": "peerreview",
+   "label": "Peer\nreview",
+   "desc": "Structured review of peers' work using a rubric, with a written reflection on feedback received",
+   "content": {
+    "analyse": {
+     "pros": [
+      "Analysing a peer's argument using a structured rubric develops the same analytical skills students need for their own work.",
+      "Both the reviewer and the student being reviewed benefit from the process. The written reflection on feedback received adds a metacognitive layer that deepens analytical engagement and helps students see their own work differently."
+     ],
+     "cons": [
+      "The rubric must guide genuine analysis rather than surface-level commentary. Students need examples of high-quality analytical peer feedback.",
+      "A platform with timestamped submissions is needed to verify genuine engagement with the peer's actual text."
+     ],
+     "ai": "The review must cite specific passages from a named peer's work. The reflection must describe how the feedback changed the student's own thinking. Neither element can be produced without genuine prior engagement with the course and the peer's text."
+    },
+    "evaluate": {
+     "pros": [
+      "Critical peer evaluation requires students to apply evaluative criteria to another's argument and justify their assessment.",
+      "This is one of the most effective tools for developing students' own evaluative judgement. The process of justifying an evaluation builds exactly the metacognitive skills needed at postgraduate level and prepares students for professional peer review in academic and policy contexts."
+     ],
+     "cons": [
+      "Students may be reluctant to give critical feedback to peers. The evaluative criteria must be taught and modelled before the task.",
+      "Moderation is needed to ensure criteria are applied consistently across different reviewers."
+     ],
+     "ai": "Applying evaluative criteria to a specific peer's actual argument requires access to that text and a genuine evaluative process. AI cannot produce a justified critique of work it has not read, and the justification must connect to the specific criteria taught in the course."
+    },
+    "create": {
+     "pros": [
+      "When peer review is structured as a creative collaborative process where students not only evaluate but suggest and develop improvements, students develop the capacity to generate constructive responses to others' work.",
+      "This is itself a form of original intellectual production and builds the capacity for sustainable feedback that students will use throughout their careers."
+     ],
+     "cons": [
+      "This works most effectively as a formative task that feeds into summative work. It requires a well-designed brief that distinguishes constructive development from simple correction.",
+      "Students need a model of what creative developmental feedback looks like."
+     ],
+     "ai": "Generating genuinely constructive developmental feedback on a specific peer's argument requires close reading, course knowledge and creative thinking about alternatives. It cannot be delegated to AI without access to the peer's actual text and the course context."
+    }
+   }
+  },
+  {
+   "id": "video",
+   "label": "Video &\nmedia",
+   "desc": "Student-produced multimedia piece communicating a disciplinary argument or narrative",
+   "content": {
+    "analyse": {
+     "pros": [
+      "Producing an analytical video essay requires students to break down a complex issue and communicate the analysis visually and verbally.",
+      "Communicating disciplinary analysis through multiple modes deepens processing and helps students develop a distinct literacy that is increasingly valued in professional and policy contexts."
+     ],
+     "cons": [
+      "The brief must make clear that content and analytical rigour are graded rather than production quality. Accessibility considerations apply for both production and viewing.",
+      "Students need guidance on how analytical argument works in a video format, which differs from written academic conventions."
+     ],
+     "ai": "The student must appear on screen and deliver the analysis in their own voice. Script, delivery and on-screen presence are visibly personal. A video tied to a specific course debate cannot be generated or delivered by AI on the student's behalf."
+    },
+    "evaluate": {
+     "pros": [
+      "A video essay at the evaluative level requires students to develop and defend a position on a contested issue in a multimodal format.",
+      "The combination of written argument and verbal delivery makes the evaluative process doubly visible and develops the ability to communicate judgement persuasively across different modes and audiences."
+     ],
+     "cons": [
+      "Marking must reward the quality of the evaluative argument rather than production values.",
+      "Some students experience significant anxiety around on-screen performance. Accessibility considerations must be addressed in the brief and the marking criteria."
+     ],
+     "ai": "Voice, evaluative argument and on-screen presence are visibly personal. A video essay tied to a specific course debate cannot be adequately generated or delivered by AI. The student must appear and argue."
+    },
+    "create": {
+     "pros": [
+      "A documentary or explainer requires students to synthesise multiple sources into a coherent original narrative.",
+      "The production process itself is a rich learning activity that develops research, editorial and communication skills simultaneously. Creating something for a real audience sharpens the quality of the argument in ways that writing for faculty alone does not."
+     ],
+     "cons": [
+      "This is the most logistically demanding format on the wheel and requires a clear brief on scope, length, format and content criteria from the outset.",
+      "Individual versus group production decisions need careful accountability design to ensure individual contribution is visible."
+     ],
+     "ai": "An original documentary requires research, editorial decisions, recording and a coherent argument built from scratch. The combination of these elements creates a distinctively personal and unreplicable product that AI cannot produce for the student."
+    }
+   }
+  },
+  {
+   "id": "journal",
+   "label": "Learning\njournals",
+   "desc": "A structured record in which students document what was discussed or experienced in or outside the class, reflect on those experiences, and show how the learning has had an impact on their own thinking",
+   "content": {
+    "analyse": {
+     "pros": [
+      "Learning journals and blogs at the analytical level ask students to document and break down what happened in or outside the class depending on the task, identifying the key ideas, arguments and tensions that emerged from their own personal experience. Students reflect on how they formed their ideas and how those ideas connect to their own understanding.",
+      "Writing regularly across a course also helps students compare how their ideas evolve over time, tracing shifts in their thinking from one entry to the next. This develops analytical stamina and the ability to track intellectual development in a way that single end-point assessment cannot capture."
+     ],
+     "cons": [
+      "Students need to understand that reflective writing is different from academic writing. It draws on personal experience, uses the first person and values process over argument. Without guidance and examples, many students default to academic register and miss the point of the task.",
+      "Providing examples of reflective writing at different levels of achievement, or dedicating time in class to what reflection actually looks like, significantly improves the quality of the output."
+     ],
+     "ai": "Analysing a specific class discussion, debate or guest speaker requires the student to have been present and to have processed the experience themselves. AI has no access to what happened in the room and cannot produce a genuine account of it."
+    },
+    "evaluate": {
+     "pros": [
+      "At the evaluative level a learning journal or blog asks students to make judgements about the significance of what they have experienced. Students assess which moments or ideas were most important, why they mattered, and what they would do differently in light of them.",
+      "This develops metacognitive awareness, which is the ability to evaluate one's own thinking, and is one of the strongest indicators of learning quality at postgraduate level. The journal becomes a record of intellectual development that is uniquely the student's own."
+     ],
+     "cons": [
+      "Assessment criteria need to be explicit about what evaluative reflection looks like, as distinct from description. Students who have not encountered this format before may need a model entry and a short workshop before they begin.",
+      "Regular low-stakes entries are more effective than a single end-of-course submission. Building journal time into the course structure rather than leaving it as additional work significantly increases engagement and depth."
+     ],
+     "ai": "Evaluating the significance of a specific class experience requires genuine prior engagement with that experience. AI cannot reconstruct a student's authentic evaluative response to something it did not witness, and any fabricated entry would lack the specificity and personal voice that markers can quickly identify."
+    },
+    "create": {
+     "pros": [
+      "At the create level a learning journal or blog becomes a curated record of intellectual growth, in which the student selects, connects and synthesises their reflections into a coherent narrative about their own development. This is a genuinely original act of meaning-making that produces something no other student could produce.",
+      "Blogs in particular can develop a public-facing reflective voice, which is increasingly valued in policy, advocacy and professional contexts. The student produces something that did not exist before and that could not have been produced by anyone else."
+     ],
+     "cons": [
+      "Students need examples of what a well-synthesised reflective account looks like at postgraduate level. The brief should be explicit that the goal is not a summary of course content but a creative account of the student's own intellectual journey through it.",
+      "Training in reflective writing as a distinct genre is essential before this task is set. Reflective writing differs from academic argument in its use of the first person, personal experience and forward-looking reflection."
+     ],
+     "ai": "A synthesised reflective account of a student's learning journey across a course is inherently personal and situated. It draws on specific moments, relationships and realisations that belong to that student alone. AI cannot fabricate that journey, and any attempt to do so would be immediately visible in the absence of course-specific detail."
+    }
+   }
+  }
+ ],
+ "chipsLabel": "Assessment types",
+ "skip": "Skip to content",
+ "markLabel": "CIVICA — Teaching and Learning (opens in a new tab)",
+ "markSub": "Teaching & Learning",
+ "themeToDark": "Dark",
+ "themeToLight": "Light",
+ "themeToDarkLabel": "Switch to dark mode",
+ "themeToLightLabel": "Switch to light mode",
+ "newTab": " (opens in a new tab)",
+ "lblAuthor": "Author",
+ "lblPublished": "Published",
+ "lblPart": "Part of",
+ "lblLicence": "Licence",
+ "licence": "This work is licensed under {link}, except where otherwise noted.",
+ "funding": "Co-funded by the European Union"
+};
+const T = LANGS.en;
+/* ===== Colours (presentation only) — see the build notes for the contrast fixes ===== */
+const COLOURS = {
+ "rings": {
+  "analyse": {
+   "fill": "#5DCAA5",
+   "text": "#04342C"
+  },
+  "evaluate": {
+   "fill": "#8C85E1",
+   "text": "#26215C"
+  },
+  "create": {
+   "fill": "#DD714D",
+   "text": "#4A1B0C"
+  }
+ },
+ "segs": {
+  "casestudy": "#E8A838",
+  "scenario": "#1D9E75",
+  "oped": "#D55580",
+  "policybrief": "#185FA5",
+  "essay": "#534AB7",
+  "peerreview": "#7B5E0E",
+  "video": "#8B2252",
+  "journal": "#2E6B10"
+ },
+ "darkLabel": [
+  "casestudy",
+  "oped",
+  "scenario"
+ ],
+ "titleText": {
+  "casestudy": "#A06C12",
+  "scenario": "#198663",
+  "oped": "#CF4170"
+ }
+};
+const $ = id => document.getElementById(id);
+const esc = s => String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");
+const rich = s => esc(s).replace(/\*\*(.+?)\*\*/g,"<strong>$1</strong>").replace(/\*(.+?)\*/g,"<em>$1</em>");
+const reduced = () => typeof window.matchMedia === "function" && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+/* ---- static text ---- */
+document.title = T.docTitle;
+$("t-title").textContent = T.title; $("t-intro").textContent = T.intro;
+$("hint").textContent = T.hint; $("reset-btn").textContent = T.reset;
+$("t-col-pros").textContent = T.colPros; $("t-col-cons").textContent = T.colCons; $("t-col-ai").textContent = T.colAi;
+$("ct").textContent = T.considerTitle;
+$("cg").innerHTML = T.consider.map(([b, s]) => `<li class="ci"><b>${esc(b)}</b><span>${esc(s)}</span></li>`).join("");
+$("t-refs").textContent = T.refsTitle;
+[["t-ref1", T.ref1], ["t-ref2", T.ref2]].forEach(([id, r]) => {
+  $(id).innerHTML = `<strong>${esc(r[0])}</strong> ${esc(r[1])}<a href="${r[3]}" target="_blank" rel="noopener noreferrer">${esc(r[2])}<span class="sr-only">${esc(T.newTab)}</span></a>${esc(r[4])}`;
+});
+$("t-cite").innerHTML = esc(T.citation) + "<br>\n" + esc(T.developed);
+
+/* ===== The wheel (the author's geometry and behaviour) ===== */
+const RINGS = T.rings.map(r => Object.assign({}, r, COLOURS.rings[r.id]));
+const SEGS = T.segs.map(s => Object.assign({}, s, { color: COLOURS.segs[s.id] }));
+const N = SEGS.length, DEG = 360 / N;
+SEGS.forEach((s, i) => { s.a1 = i * DEG; s.a2 = (i + 1) * DEG; });
+const rad = d => d * Math.PI / 180;
+function arc(r1, r2, a1, a2, g){
+  g = g === undefined ? 1.6 : g;
+  const s = rad(a1 + g), e = rad(a2 - g), C = Math.cos, S = Math.sin, lg = (a2 - a1) > 180 ? 1 : 0;
+  return `M${r1*C(s)},${r1*S(s)}L${r2*C(s)},${r2*S(s)}A${r2},${r2},0,${lg},1,${r2*C(e)},${r2*S(e)}L${r1*C(e)},${r1*S(e)}A${r1},${r1},0,${lg},0,${r1*C(s)},${r1*S(s)}Z`;
+}
+function rtext(r, midDeg, lines, sz, fill, bold){
+  const mr = rad(midDeg), x = r * Math.cos(mr), y = r * Math.sin(mr);
+  const tr = (midDeg + 90) % 360, rot = (tr > 90 && tr < 270) ? ((tr + 180) % 360) : tr;
+  const lh = sz * 1.3, total = (lines.length - 1) * lh;
+  let t = `<text transform="rotate(${rot},${x},${y})" text-anchor="middle" font-weight="${bold ? 800 : 600}" font-size="${sz}" fill="${fill}">`;
+  lines.forEach((l, i) => { t += `<tspan x="${x}" y="${y}" dy="${-total/2 + i*lh}" dominant-baseline="middle">${esc(l)}</tspan>`; });
+  return t + `</text>`;
+}
+let activeSegId = null, activeBloom = "evaluate";
+
+function build(){
+  let h = "";
+  const OR1 = 170, OR2 = 230;
+  SEGS.forEach(seg => {
+    const mid = (seg.a1 + seg.a2) / 2;
+    const label = COLOURS.darkLabel.includes(seg.id) ? "#1a1a1a" : "#ffffff";
+    h += `<g class="wseg" data-id="${seg.id}">`;
+    h += `<path d="${arc(OR1, OR2, seg.a1, seg.a2, 2)}" fill="${seg.color}" stroke="var(--wheel-gap)" stroke-width="3"/>`;
+    h += rtext((OR1 + OR2) / 2, mid, seg.label.split("\n"), 13, label, true);
+    h += `</g>`;
+  });
+  const IR1 = 60, IR2 = 155, bloomDeg = 360 / 3, bloomStart = -90;
+  RINGS.forEach((ring, i) => {
+    const a1 = bloomStart + i * bloomDeg, a2 = a1 + bloomDeg, mid = a1 + bloomDeg / 2;
+    h += `<g class="bloom-seg" data-bloom="${ring.id}">`;
+    h += `<path d="${arc(IR1, IR2, a1, a2, 2)}" fill="${ring.fill}" stroke="var(--wheel-gap)" stroke-width="3"/>`;
+    h += rtext((IR1 + IR2) / 2, mid, [ring.label], 16, ring.text, true);
+    h += `</g>`;
+  });
+  h += `<circle r="57" fill="#ffffff" stroke="#e0ddd8" stroke-width="1.5"/>`;
+  T.hubLines.forEach((l, i) => { h += `<text y="${-11 + i*14}" text-anchor="middle" font-size="10" fill="#3C3489" font-weight="800">${esc(l)}</text>`; });
+  [57, 155, 160, 170, 230].forEach(r => { h += `<circle r="${r}" fill="none" stroke="var(--wheel-gap)" stroke-width="1.5" opacity="0.5"/>`; });
+  const svg = $("wsvg"); svg.innerHTML = h;
+  svg.querySelectorAll(".wseg").forEach(g => g.addEventListener("click", () => click_seg(g.dataset.id)));
+  svg.querySelectorAll(".bloom-seg").forEach(g => g.addEventListener("click", () => sel_bloom(g.dataset.bloom)));
+
+  /* Chips: same eight types as real buttons */
+  const chips = $("chips"); chips.setAttribute("aria-label", T.chipsLabel);
+  chips.innerHTML = SEGS.map(s => `<button type="button" class="chip" data-id="${s.id}" aria-pressed="false" aria-controls="panel"><span class="dot" style="background:${s.color}" aria-hidden="true"></span>${esc(s.label.replace("\n", " "))}</button>`).join("");
+  chips.querySelectorAll(".chip").forEach(b => b.addEventListener("click", () => click_seg(b.dataset.id)));
+
+  /* Level buttons in the panel (the author's three pills) */
+  $("bloom-tabs").innerHTML = RINGS.map(r => `<button type="button" class="bloom-pill" data-bloom="${r.id}" aria-pressed="false" style="--pill-fill:${r.fill};--pill-text:${r.text}">${esc(r.label)}</button>`).join("");
+  document.querySelectorAll(".bloom-pill").forEach(b => b.addEventListener("click", () => sel_bloom(b.dataset.bloom)));
+
+  /* Verb legend */
+  $("verb-legend").innerHTML = RINGS.map(r => `
+    <div class="vl-item" style="--vl-label:${r.text};--vl-fill:${r.fill}">
+      <div class="vl-dot" style="background:${r.fill}" aria-hidden="true"></div>
+      <div class="vl-text"><strong>${esc(r.label)}</strong> <span>${esc(r.verbs.join("  ·  "))}</span></div>
+    </div>`).join("");
+}
+
+function sync(){
+  document.querySelectorAll(".wseg").forEach(e => {
+    e.classList.remove("active", "dimmed");
+    if (activeSegId) e.classList.add(e.dataset.id === activeSegId ? "active" : "dimmed");
+  });
+  document.querySelectorAll(".chip").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.id === activeSegId)));
+  document.querySelectorAll(".bloom-pill").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.bloom === activeBloom)));
+  document.querySelectorAll(".bloom-seg").forEach(el => { el.style.opacity = !activeSegId || el.dataset.bloom === activeBloom ? "1" : "0.45"; });
+  $("panel").hidden = !activeSegId;
+  $("hint").hidden = !!activeSegId;
+  $("reset-btn").hidden = !activeSegId;
+}
+function announce(){
+  if (!activeSegId){ $("live").textContent = ""; return; }
+  const seg = SEGS.find(s => s.id === activeSegId), ring = RINGS.find(r => r.id === activeBloom);
+  $("live").textContent = seg.label.replace("\n", " ") + " — " + ring.label;
+}
+function click_seg(id){
+  activeSegId = activeSegId === id ? null : id;      /* clicking the open type closes it, as before */
+  if (activeSegId) open_panel(SEGS.find(s => s.id === id));
+  sync(); announce();
+}
+function open_panel(seg){
+  $("pn").textContent = seg.label.replace("\n", " ");
+  $("panel").style.setProperty("--seg", seg.color);
+  $("panel").style.setProperty("--seg-title", COLOURS.titleText[seg.id] || seg.color);
+  $("pd").textContent = seg.desc;
+  show_content(seg, activeBloom);
+  setTimeout(() => { const p = $("panel"); if (typeof p.scrollIntoView === "function") p.scrollIntoView({ behavior: reduced() ? "auto" : "smooth", block: "nearest" }); }, 80);
+}
+function sel_bloom(bloomId){
+  activeBloom = bloomId;
+  if (activeSegId) show_content(SEGS.find(s => s.id === activeSegId), bloomId);
+  sync(); announce();
+}
+function show_content(seg, bloomId){
+  const c = seg.content[bloomId]; if (!c) return;
+  $("pros").innerHTML = c.pros.map(p => `<li>${esc(p)}</li>`).join("");
+  $("cons2").innerHTML = c.cons.map(x => `<li>${esc(x)}</li>`).join("");
+  $("pai").textContent = c.ai;
+}
+function reset_wheel(){
+  activeSegId = null; activeBloom = "evaluate";
+  sync(); announce();
+  const first = document.querySelector(".chip"); if (first) first.focus();   /* the reset button disappears, so focus moves */
+}
+$("reset-btn").addEventListener("click", reset_wheel);
+build(); sync();
+
+/* ===== CIVICA frame ===== */
+$("t-skip").textContent = T.skip; $("t-mark").setAttribute("aria-label", T.markLabel); $("t-mark-sub").textContent = T.markSub;
+document.querySelectorAll('.attribution a[target="_blank"]').forEach(a => { const sp = document.createElement("span"); sp.className = "sr-only"; sp.textContent = T.newTab; a.appendChild(sp); });
+$("t-lbl-author").textContent = T.lblAuthor; $("t-lbl-published").textContent = T.lblPublished;
+$("t-lbl-part").textContent = T.lblPart; $("t-lbl-licence").textContent = T.lblLicence; $("t-funding").textContent = T.funding;
+$("t-licence").innerHTML = esc(T.licence).replace("{link}", '<a href="' + LICENCE_URL + '" target="_blank" rel="noopener noreferrer license">' + esc(LICENCE_NAME) + '<span class="sr-only">' + esc(T.newTab) + '</span></a>');
+const pd = $("published-date"); pd.setAttribute("datetime", PUBLISHED);
+pd.textContent = new Intl.DateTimeFormat("en-GB", { day:"numeric", month:"long", year:"numeric", timeZone:"UTC" }).format(new Date(PUBLISHED + "T12:00:00Z"));
+const SUN = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4.2"/><path d="M12 1.8v2.4M12 19.8v2.4M4.6 4.6l1.7 1.7M17.7 17.7l1.7 1.7M1.8 12h2.4M19.8 12h2.4M4.6 19.4l1.7-1.7M17.7 6.3l1.7-1.7"/></svg>';
+const MOON = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.5 14.6A8.6 8.6 0 1 1 9.4 3.5a7 7 0 0 0 11.1 11.1z"/></svg>';
+function updateThemeButton(){
+  const dark = document.documentElement.dataset.theme === "dark";
+  $("theme-icon").innerHTML = dark ? SUN : MOON;
+  $("theme-label").textContent = dark ? T.themeToLight : T.themeToDark;
+  $("theme-btn").setAttribute("aria-pressed", String(dark));
+  $("theme-btn").setAttribute("aria-label", dark ? T.themeToLightLabel : T.themeToDarkLabel);
+}
+$("theme-btn").addEventListener("click", () => {
+  document.documentElement.dataset.theme = document.documentElement.dataset.theme === "dark" ? "light" : "dark";
+  updateThemeButton();
+});
+updateThemeButton();
+})();
+</script>
+</body>
+</html>
